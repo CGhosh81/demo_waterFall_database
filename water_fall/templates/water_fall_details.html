@@ -3,48 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}World Waterfall Database{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>World Waterfall Database</title>
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="container">
-            <a href="/" class="logo">Waterfall DB</a>
+            <!-- Changed href to point to index.html in the same folder -->
+            <a href="index.html" class="logo">Waterfall DB</a>
             <nav class="main-nav">
                 <ul>
                     <li class="dropdown">
                         <a href="#">Tallest</a>
                         <div class="dropdown-content">
-                            <a href="/tallest/overall_height">By Overall Height</a>
-                            <a href="/tallest/tallest_single_drop">By Tallest Single Drop</a>
-                            <a href="/tallest/free_falling_drops">By Tallest Free-falling</a>
+                            <!-- Removed leading slashes from all links -->
+                            <a href="tallest/overall_height.html">By Overall Height</a>
+                            <a href="tallest/tallest_single_drop.html">By Tallest Single Drop</a>
+                            <a href="tallest/free_falling_drops.html">By Tallest Free-falling</a>
                         </div>
                     </li>
                     <li class="dropdown">
                         <a href="#">Largest</a>
                         <div class="dropdown-content">
-                            <a href="/largest/by_average_volume">By Average Volume</a>
-                            <a href="/largest/by_average_width">By Average Width</a>
-                            <a href="/largest/by_volume_no_rapids">By Volume (No Rapids)</a>
-                            <a href="/largest/by_volume_still_exist">By Volume (Still Exist)</a>
+                            <a href="largest/by_average_volume.html">By Average Volume</a>
+                            <a href="largest/by_average_width.html">By Average Width</a>
+                            <a href="largest/by_volume_no_rapids.html">By Volume (No Rapids)</a>
+                            <a href="largest/by_volume_still_exist.html">By Volume (Still Exist)</a>
                         </div>
                     </li>
                     <li class="dropdown">
                         <a href="#">Database</a>
                         <div class="dropdown-content">
-                            <a href="/database/browse_by_country">Browse by Country</a>
-                            <a href="/database/browse_the_map">Browse the Map</a>
-                            <a href="/database/recent_update">Recent Updates</a>
+                            <a href="database/browse_by_country.html">Browse by Country</a>
+                            <a href="database/browse_the_map.html">Browse the Map</a>
+                            <a href="database/recent_update.html">Recent Updates</a>
                         </div>
                     </li>
-                    <li><a href="/top_rated">Top Rated</a></li>
-                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="Top_rated.html">Top Rated</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
                     <li class="dropdown">
                         <a href="#">More</a>
                         <div class="dropdown-content">
-                            <a href="/books">Books</a>
-                            <a href="/help">Help</a>
-                            <a href="/contact">Contact</a>
+                            <a href="Books.html">Books</a>
+                            <a href="Help.html">Help</a>
+                            <a href="Contact.html">Contact</a>
                         </div>
                     </li>
                 </ul>
@@ -53,7 +55,7 @@
     </header>
 
     <main>
-        {% block content %}{% endblock %}
+        <!-- This content will be replaced by each page's content -->
     </main>
 
     <footer class="site-footer">
@@ -62,6 +64,7 @@
         </div>
     </footer>
 
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <!-- Corrected the script path as well -->
+    <script src="../static/js/app.js"></script>
 </body>
 </html>
